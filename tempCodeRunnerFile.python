@@ -1,0 +1,2 @@
+for width in range(-7,10):
+    print(width)
