@@ -1,3 +1,4 @@
+from player import create_player
 import util
 import engine
 import ui
@@ -16,7 +17,7 @@ def player():
 
 
 def main():
-    position_player = player()
+    position_player = create_player()
     board = engine.create_board_from_file("board.txt")
     is_running = True
     while is_running:
