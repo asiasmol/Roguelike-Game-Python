@@ -9,7 +9,7 @@ BOARD_WIDTH = 20
 BOARD_HEIGHT = 20
 
 
-def player():
+def create_player():
     return {
         'icon': '@',
         'y': 3,
