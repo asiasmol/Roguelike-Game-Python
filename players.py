@@ -5,9 +5,9 @@ def ipnut_player():
     return kind_player
 
 def create_player(kind_player):
-    dog = {"icon":"#","health": 10, "sweetness": 15, "stamina": 10, "sickness": [], "level": 0}
-    cat = {"icon":"(‧̫‧)","health": 7, "sweetness": 20, "stamina": 15, "sickness": [], "level": 0}
-    platypus = {"icon":"#","health": 5, "sweetness": 10, "stamina": 8, "sickness": [], "level": 0}
+    dog = {"icon":"#","health": 10, "sweetness": 15, "stamina": 10, "sickness": [],"inventory": [], "level": 0}
+    cat = {"icon":"(‧̫‧)","health": 7, "sweetness": 20, "stamina": 15, "sickness": [],"inventory": [], "level": 0}
+    platypus = {"icon":"#","health": 5, "sweetness": 10, "stamina": 8, "sickness": [],"inventory": [], "level": 0}
     
     while True:
         if kind_player == "1":

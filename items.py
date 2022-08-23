@@ -20,3 +20,6 @@ diseases = {"Ból brzucha":"Muchomor", "Przeziębienie":"Zimno/Chłód", "Krwawi
 
 medicines = {"Lek na trawienie":"Ból brzucha", "Syrop":"Przeziębienie", "Bandaż":"Krwawienie",
 "Plasterek na uzależnienia":"Uzależnienie", "Aloes":"Poparzenie"}
+
+def conver_dict(dictionary):
+    return [keys for keys in dictionary.keys()]
