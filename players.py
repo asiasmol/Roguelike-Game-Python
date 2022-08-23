@@ -1,11 +1,13 @@
+import util
 def ipnut_player():
+    util.clear_screen()
     kind_player = input("Choose a character: 1-dog, 2-cat, 3-platypus:")
     return kind_player
 
 def create_player(kind_player):
-    dog = {"health": 10, "sweetness": 15, "stamina": 10, "sickness": [], "level": 0}
-    cat = {"health": 7, "sweetness": 20, "stamina": 15, "sickness": [], "level": 0}
-    platypus = {"health": 5, "sweetness": 10, "stamina": 8, "sickness": [], "level": 0}
+    dog = {"icon":"#","health": 10, "sweetness": 15, "stamina": 10, "sickness": [], "level": 0}
+    cat = {"icon":"(‧̫‧)","health": 7, "sweetness": 20, "stamina": 15, "sickness": [], "level": 0}
+    platypus = {"icon":"#","health": 5, "sweetness": 10, "stamina": 8, "sickness": [], "level": 0}
     
     while True:
         if kind_player == "1":
@@ -17,8 +19,8 @@ def create_player(kind_player):
         else:
             print("Invalid input!!")
 
-def Position_player():
+def Position_player(pet):
     return {
-        'icon': '@',
+        'icon': pet,
         'y': 3,
         'x': 3}

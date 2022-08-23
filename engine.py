@@ -1,4 +1,4 @@
-from time import sleep
+import characters
 
 
 def create_board(width, height):
@@ -22,6 +22,7 @@ def position_player_is_free(board, player,key):
         return board[player['y']][player['x']-1] ==' '
     elif key == 'd':
         return board[player['y']][player['x']+1] ==' '
+    
 
 
 
