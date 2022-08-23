@@ -1,14 +1,13 @@
 import random
 
 list_of = []
-def create_fox():
+def create_fox(board):
     return {
         'icon': 'F', 'x':random.randint(1, 10), 'y':random.randint(1, 10),'health':6}
 
 def create_shelter_worker():
     return {
         'icon': 'S', 'x':random.randint(1, 10), 'y':random.randint(1, 10), 'health':10 }
-print(create_shelter_worker())
 def create_security_guard():
     return {
         'icon': 'G','x':random.randint(1, 10), 'y':random.randint(1, 10),'health':15}
@@ -36,4 +35,6 @@ def fight_with_security_guard():
     print('Your fight with the security guard begins!')
     round = 1 
     print(f'Round {round} !')
+
+
 
