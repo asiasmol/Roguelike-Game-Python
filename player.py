@@ -16,3 +16,9 @@ def create_player(kind_player):
             return platypus
         else:
             print("Invalid input!!")
+
+def Position_player():
+    return {
+        'icon': '@',
+        'y': 3,
+        'x': 3}
