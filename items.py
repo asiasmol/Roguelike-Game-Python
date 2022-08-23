@@ -1,4 +1,7 @@
 # key = Item name | value = item statistics(Hp,Stamina,Sweet)they can be negative or positive 
+from unicodedata import name
+
+
 cat_items = {"Jagody":(2,0,0), "Kocimiętka":(1,2,0),
  "Bagienne ziele": (-1,2,0), "Muchomor":(-2,-1,0),
   "Pokrzywa":(-1,0,0), "Olejek do futerka":(0,1,1),
@@ -23,3 +26,18 @@ medicines = {"Lek na trawienie":"Ból brzucha", "Syrop":"Przeziębienie", "Banda
 
 def conver_dict(dictionary):
     return [keys for keys in dictionary.keys()]
+
+def chose_inventory(name):
+  if name == "Cat":
+    return cat_items
+  if name == "Dog":
+    return dog_items
+  if name == "Platypus":
+    return platypus_items
+
+def add_statistic(player):
+  inventory = chose_inventory(player['name'])
+  for item in player['inventory']:
+    player["health"] += inventory[item][0]
+    player['sweetness'] += inventory[item][1]
+    player['stamina'] += inventory[item][2]

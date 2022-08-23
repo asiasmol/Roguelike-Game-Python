@@ -14,14 +14,23 @@ def remove_position_player_on_board(board, player):
     board[player['y']][player['x']] = ' '
 
 def position_player_is_free(board, player,key):
+    mobs = ["G","S","F"]
     if key == 'w':
+        if board[player['y']-1][player['x']] in mobs:
+            return True
         return board[player['y']-1][player['x']] ==' '
     elif key == 's':
+        if board[player['y']+1][player['x']] in mobs:
+            return True
         return board[player['y']+1][player['x']] ==' '
     elif key == 'a':
+        if board[player['y']][player['x']-1] in mobs:
+            return True
         return board[player['y']][player['x']-1] ==' '
     elif key == 'd':
-        return board[player['y']][player['x']+1] ==' '
+        if (board[player['y']][player['x']+1] in mobs):
+            return True
+        return board[player['y']][player['x']+1] ==' ' 
 
 
 def create_board_from_file(filename):
