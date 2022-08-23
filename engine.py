@@ -22,8 +22,6 @@ def position_player_is_free(board, player,key):
         return board[player['y']][player['x']-1] ==' '
     elif key == 'd':
         return board[player['y']][player['x']+1] ==' '
-    
-
 
 
 def create_board_from_file(filename):

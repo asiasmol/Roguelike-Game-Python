@@ -2,11 +2,12 @@ import util
 import engine
 import ui
 import inventory as inv
-
+import characters
 
 
 def play(board,position_player,player):
     is_running = True
+    characters.create_mob(board, characters.choose_mob('fox'))
     while is_running:
         engine.put_position_player_on_board(board, position_player)
         ui.display_board(board,position_player)
