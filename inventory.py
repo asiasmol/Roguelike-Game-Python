@@ -18,6 +18,6 @@ def loot_mobs(player, inventory, mob):
             if player == "Cat":    
                 inventory.append(random.choice(items.conver_dict(items.cat_items)))
             elif player == "Dog":
-                inventory.append(random.choice(items.dog_items.keys()))
+                inventory.append(random.choice(items.conver_dict(items.dog_items)))
             else:
-                inventory.append(random.choice(items.platypus_items.keys()))
+                inventory.append(random.choice(items.conver_dict(items.platypus_items)))
