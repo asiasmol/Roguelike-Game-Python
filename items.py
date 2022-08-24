@@ -1,10 +1,10 @@
 # key = Item name | value = item statistics(Hp,Stamina,Sweet)they can be negative or positive 
 
 
-cat_items = {"Muchomor":(-2,-1,0)}#"Jagody":(2,0,0), "Kocimiętka":(1,2,0),
- #"Bagienne ziele": (-1,2,0), "Muchomor":(-2,-1,0)
-#  ,"Olejek do futerka":(0,1,1),
- # "Kokardka":(0,0,2)}
+cat_items = {"Jagody":(2,0,0), "Kocimiętka":(1,2,0),
+ "Bagienne ziele": (-1,2,0), "Muchomor":(-2,-1,0)
+  ,"Olejek do futerka":(0,1,1),
+  "Kokardka":(0,0,2)}
  
 dog_items = {"Kość":(1,1,0), "Kiełbasa":(2,0,0),
 "Chrupki":(1,0,0), "DentaStix":(1,1,1), "Szczotka do sierści":(0,0,2),

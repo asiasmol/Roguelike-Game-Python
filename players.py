@@ -6,9 +6,9 @@ def ipnut_player():
     return kind_player
 
 def create_player(kind_player):
-    dog = {"name":"Dog","icon":"ࢥ","health": 10, "sweetness": 15, "stamina": 10, "sickness": [],"inventory": [ ], "level": 0}
-    cat = {"name":"Cat","icon":"Დ","health": 7, "sweetness": 20, "stamina": 15, "sickness": [],"inventory": [ ], "level": 0}
-    Monkey = {"name":"Monkey","icon":"ꚗ","health": 5, "sweetness": 10, "stamina": 8, "sickness": [],"inventory": [ ], "level": 0}
+    dog = {"name":"Dog","icon":"ࢥ","health": 10, "sweetness": 15, "stamina": 10, "sickness": [],"inventory": [ ]}
+    cat = {"name":"Cat","icon":"Დ","health": 7, "sweetness": 20, "stamina": 15, "sickness": [],"inventory": [ ]}
+    Monkey = {"name":"Monkey","icon":"ꚗ","health": 5, "sweetness": 10, "stamina": 8, "sickness": [],"inventory": [ ]}
     
     while True:
         if kind_player == "1":
@@ -24,7 +24,7 @@ def Position_player(pet):
     return {
         'icon': pet,
         'y': 3,
-        'x': 3}
+        'x': 15}
 
 def player_statistic(player):
     for keys,item in player.items():

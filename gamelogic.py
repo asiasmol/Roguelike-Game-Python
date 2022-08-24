@@ -4,6 +4,7 @@ import ui
 import inventory as inv
 import characters
 import players
+import keys
 
 
 def play():
@@ -27,6 +28,10 @@ def play():
             util.key_pressed()
         if engine.position_player_is_free(board,position_player,key):
             position_player = engine.move(key,position_player)
+            if board[position_player['y']] [position_player['x']] == "¶":
+                keys.open_door(position_player)
+            if board[position_player['y']] [position_player['x']] == "B":
+                print("walka z bosem")
             if board[position_player['y']] [position_player['x']] in ["G","S","F"]:
                 characters.fight_with_mob(characters.choose_mob(board[position_player['y']] [position_player['x']]),player)
         util.clear_screen()
