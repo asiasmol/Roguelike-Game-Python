@@ -34,13 +34,14 @@ def fight_with_mob(mob, player):
     print('Your fight with the ,',mob['name'] ,'begins!')
     round = 1 
     while kill_mob >0 and player_stamina>0:
+        util.clear_screen()
         print(f'Round {round} !')
         if round %2 ==0:
             print('Mob turn')
             player['health'] -= mob['stamina'] * (random.randint(1,10)/10)
             print(f'You have ', player['health'])
         player_choice = input('Choose which skill would you like to use \nAttack\nIncrease stamina\nHeal\nRun\n ').capitalize()
-        if player_choice in player_skills and player_skills[player_choice] >0:
+        if player_choice in player_skills:
             if player_choice == 'Attack':
                 kill_mob -= player_stamina * (random.randint(1,10)/10)
                 print(f'Mob have ', kill_mob)
@@ -51,7 +52,7 @@ def fight_with_mob(mob, player):
                 player_stamina +=1
                 print(f'You gained one stamina. ')
             if player_choice == 'Run':
-                continue
+                break
         else:
             print('Invalid input')
         round +=1
@@ -59,9 +60,12 @@ def fight_with_mob(mob, player):
         print("Nice you kill",mob['name'])
         inventory.loot_mobs(player['name'],player['inventory'],mob['name'])
         items.add_statistic(player)
-    if player["health"] <0:
+    elif player["health"] <0:
         print("You lose game sory ")
+    else:
+        print("Run away you little shit")
     sleep(2)
+
 
 def put_mob_to_map(board,fox = 2,shelter_worker = 2,security_guard = 2):
     mobs = [fox,shelter_worker,security_guard]

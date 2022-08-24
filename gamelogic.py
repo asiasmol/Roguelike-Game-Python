@@ -3,11 +3,13 @@ import engine
 import ui
 import inventory as inv
 import characters
-import items
 import players
 
 
-def play(board,position_player,player):
+def play():
+    player = players.create_player(players.ipnut_player())
+    position_player = players.Position_player(player['icon'])
+    board = engine.create_board_from_file("board.sty")
     is_running = True
     characters.put_mob_to_map(board)
     while is_running:

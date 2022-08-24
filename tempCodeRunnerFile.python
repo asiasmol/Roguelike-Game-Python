@@ -1,4 +1,6 @@
-import random
-for i in range(10):
-    if random.randint(0,10) > 5:
-        print(i,"kotek")
+diseases = {"Ból brzucha":"Muchomor", "Przeziębienie":"Zimno/Chłód", "Krwawienie":"Szkło",
+"Uzależnienie":"3xBagienne ziele", "Poparzenie":"Pokrzywa"}
+
+
+
+print("Ból brzucha" in diseases)

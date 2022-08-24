@@ -13,11 +13,12 @@ def adding_items():
 #Adds random items from mob
 def loot_mobs(player, inventory, mob):
     mob_loot = {"Fox":1, "Shelter_worker":2, "Security_guard":3}
-    if random.randint(0,10) > 0:
-        for _ in range(mob_loot[mob]):
+
+    for _ in range(mob_loot[mob]):
+        if random.randint(0,10) > 0:
             if player == "Cat":    
                 inventory.append(random.choice(items.conver_dict(items.cat_items)))
             elif player == "Dog":
-                inventory.append(random.choice(items.dog_items.keys()))
+                inventory.append(random.choice(items.conver_dict(items.dog_items)))
             else:
-                inventory.append(random.choice(items.platypus_items.keys()))
+                inventory.append(random.choice(items.conver_dict(items.platypus_items)))

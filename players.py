@@ -2,13 +2,13 @@ import util
 import fontawesome as fa
 def ipnut_player():
     util.clear_screen()
-    kind_player = input("Choose a character: 1-dog, 2-cat, 3-platypus:")
+    kind_player = input("Choose a character: 1-dog, 2-cat, 3-Monkey:")
     return kind_player
 
 def create_player(kind_player):
-    dog = {"name":"Dog","icon":"#","health": 10, "sweetness": 15, "stamina": 10, "sickness": [],"inventory": [ ], "level": 0}
-    cat = {"name":"Cat","icon":"@","health": 7, "sweetness": 20, "stamina": 15, "sickness": [],"inventory": [ ], "level": 0}
-    platypus = {"name":"Platypus","icon":"#","health": 5, "sweetness": 10, "stamina": 8, "sickness": [],"inventory": [ ], "level": 0}
+    dog = {"name":"Dog","icon":"ࢥ","health": 10, "sweetness": 15, "stamina": 10, "sickness": [],"inventory": [ ], "level": 0}
+    cat = {"name":"Cat","icon":"Დ","health": 7, "sweetness": 20, "stamina": 15, "sickness": [],"inventory": [ ], "level": 0}
+    Monkey = {"name":"Monkey","icon":"ꚗ","health": 5, "sweetness": 10, "stamina": 8, "sickness": [],"inventory": [ ], "level": 0}
     
     while True:
         if kind_player == "1":
@@ -16,7 +16,7 @@ def create_player(kind_player):
         elif kind_player == '2':
             return cat
         elif kind_player == "3":
-            return platypus
+            return Monkey
         else:
             print("Invalid input!!")
 
