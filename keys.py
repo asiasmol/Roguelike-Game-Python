@@ -1,5 +1,4 @@
-
-def open_door(board,position):
+def key_map_1(board,position):
     if position['y'] == 12 and position['x'] == 89:
         for i in range(3):
             board[49][72+i] = " "
@@ -43,3 +42,17 @@ def open_door(board,position):
     if position['y'] == 123 and position['x'] == 86:
         for i in range(2):
             board[1][18+i] = " "
+
+def key_map_2(board,position):
+    pass
+def key_map_3(board,position):
+    pass
+
+def open_door(number_board,board,position):
+    if number_board == 1:
+        key_map_1(board,position)
+    if number_board == 2:
+        key_map_2(board,position)
+    if number_board == 3:
+        key_map_3(board,position)
+

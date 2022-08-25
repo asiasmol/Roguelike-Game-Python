@@ -94,6 +94,7 @@ def loot_sickness(player):
     player['inventory'].append(sick)
     player["sickness"].append(diseases[sick])
   add_player_statistic(player,hiden_item,sick,)
+  heal_player(player)
   print(f"O nie właśnie stanołeś na {sick}")
   sleep(2)
 

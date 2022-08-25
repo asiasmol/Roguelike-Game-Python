@@ -56,6 +56,7 @@ def fight_with_mob(mob, player):
                 if player_choice == 'Run':
                     return("Run")
                 round +=1
+                sleep(1)
                 break
             else:
                 print('Invalid input')

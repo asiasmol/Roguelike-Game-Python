@@ -29,8 +29,8 @@ def choosing_a_board():
         util.clear_screen()
         choice = input("Select boards 1-3: ")
         if choice == "1":
-            return engine.create_board_from_file("boards/board_1/hiden_board.sty"), engine.create_board_from_file("boards/board_1/board.sty")
+            return 1,engine.create_board_from_file("boards/board_1/hiden_board.sty"), engine.create_board_from_file("boards/board_1/board.sty")
         if choice == "2":
-            return engine.create_board_from_file("boards/board_2/hiden_board.sty"), engine.create_board_from_file("boards/board_2/board.sty")
-        if choice == "2":
-            return engine.create_board_from_file("boards/board_3/hiden_board.sty"), engine.create_board_from_file("boards/board_3/board.sty")
+            return 2,engine.create_board_from_file("boards/board_2/hiden_board.sty"), engine.create_board_from_file("boards/board_2/board.sty")
+        if choice == "3":
+            return 3,engine.create_board_from_file("boards/board_3/hiden_board.sty"), engine.create_board_from_file("boards/board_3/board.sty")

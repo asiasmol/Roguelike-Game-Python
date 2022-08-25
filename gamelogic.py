@@ -14,7 +14,7 @@ def play():
     add_info = {}
     player = players.create_player(players.ipnut_player())
     position_player = players.Position_player(player['icon'])
-    board, hiden_board = ui.choosing_a_board()
+    number_board,board, hiden_board = ui.choosing_a_board()
     items.put_medicines_to_map(hiden_board)
     test.start_thread(player,add_info)
     items_list = items.create_hidden_item(board)
@@ -40,7 +40,7 @@ def play():
                 print("congratulation you escepe")
                 util.key_pressed()
                 return False
-        check = check_play(hiden_board,position_player,board,player,items_list)
+        check = check_play(hiden_board,position_player,board,player,items_list,number_board)
         util.clear_screen()
 
 
@@ -54,18 +54,16 @@ def function_board(hiden_board,board,position_player,check, add_info):
         else:
             ui.display_board(hiden_board,position_player)
 
-def check_play(hiden_board,position_player,board,player,items_list):
+def check_play(hiden_board,position_player,board,player,items_list,number_board):
             if hiden_board[position_player['y']] [position_player['x']] == "i":
                 items.loot_medicine(player)
             if {"y":position_player['y'],"x": position_player['x']} in items_list:
                 items.loot_sickness(player)
                 items_list.remove({"y":position_player['y'],"x": position_player['x']})
             if board[position_player['y']] [position_player['x']] in ["¶","."]:
-                keys.open_door(hiden_board,position_player)
-                keys.open_door(board,position_player)
+                keys.open_door(number_board,hiden_board,position_player)
+                keys.open_door(number_board,board,position_player)
             if board[position_player['y']] [position_player['x']] == "B":
-                print("kotek")
-                sleep(2)
                 characters.fight_with_boss(player,position_player,board)
             if board[position_player['y']] [position_player['x']] in ["G","S","F"]:
                 return characters.fight_with_mob(characters.choose_mob(board[position_player['y']] [position_player['x']]),player)
