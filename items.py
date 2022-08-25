@@ -53,10 +53,29 @@ def add_statistic(player):
       player['sweetness'] += inventory[item][1]
       player['stamina'] += inventory[item][2]
 
+def create_random_position(board):
+    random_y = random.randint(1, len(board)-1)
+    random_x = random.randint(1, len(board[0])-1)
+    return {'y':random_y, 'x': random_x}
+
+def create_hidden_item(board):
+  list_of_hidden_items = []
+  for _ in range(10):
+    hidden_item ={}
+    while True:
+      position = create_random_position(board)
+      if position not in list_of_hidden_items and board[position['y'][position['x']]] == ' ':
+        hidden_item['y'] = position['y']  
+        hidden_item['x'] = position['x']  
+        break
+    list_of_hidden_items.append(hidden_item)
+  return list_of_hidden_items
+  
+
 def put_medicines_to_map(board):
     for _ in range(10):
         c.create_mob(board,{"icon":"i"})
-    
+
 def loot_medicine(player):
   player['inventory'].append(random.choice(conver_dict(medicines)))
   heal_player(player)

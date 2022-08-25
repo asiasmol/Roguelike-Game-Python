@@ -5,6 +5,8 @@ import inventory as inv
 import characters
 import players
 import keys
+import sick 
+import threading
 import items
 
 
@@ -15,8 +17,9 @@ def play():
     hiden_board = engine.create_board_from_file("board.sty")
     items.put_medicines_to_map(hiden_board)
     is_running = True
+    check = "no"
     while is_running:
-        function_board(hiden_board,board,position_player)
+        function_board(hiden_board,board,position_player,check)
         key = util.key_pressed()
         if key == 'q':
             is_running = False
@@ -35,23 +38,26 @@ def play():
                 print("congratulation you escepe")
                 util.key_pressed()
                 return False
-        check_play(hiden_board,position_player,board,player)
+        check = check_play(hiden_board,position_player,board,player)
         util.clear_screen()
 
 
-def function_board(hiden_board,board,position_player):
-        engine.put_position_player_on_board(hiden_board, position_player)
-        engine.put_position_player_on_board(board, position_player)
-        ui.display_board(hiden_board,position_player)
-        engine.remove_position_player_on_board(hiden_board, position_player)
-        engine.remove_position_player_on_board(board, position_player)
+def function_board(hiden_board,board,position_player,check):
+        if check != "Run":
+            engine.put_position_player_on_board(hiden_board, position_player)
+            engine.put_position_player_on_board(board, position_player)
+            ui.display_board(hiden_board,position_player)
+            engine.remove_position_player_on_board(hiden_board, position_player)
+            engine.remove_position_player_on_board(board, position_player)
+        else:
+            ui.display_board(hiden_board,position_player)
 
 def check_play(hiden_board,position_player,board,player):
             if hiden_board[position_player['y']] [position_player['x']] == "i":
                 items.loot_medicine(player)
             if board[position_player['y']] [position_player['x']] in ["¶","."]:
-                keys.open_door(board,position_player)
+                keys.open_door(hiden_board,board,position_player)
             if board[position_player['y']] [position_player['x']] == "B":
                 print("walka z bosem")
             if board[position_player['y']] [position_player['x']] in ["G","S","F"]:
-                characters.fight_with_mob(characters.choose_mob(board[position_player['y']] [position_player['x']]),player)
+                return characters.fight_with_mob(characters.choose_mob(board[position_player['y']] [position_player['x']]),player)
