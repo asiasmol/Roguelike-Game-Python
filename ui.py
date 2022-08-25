@@ -4,17 +4,17 @@ from turtle import down
 
 
 def display_board(board,position,add_info):
-    left = 21
-    right = 21
-    up = 10
-    down = 10
-    if position['x'] < 21:
-        left = 21-(21-position["x"])
-    if position['x']+21 > len(board[0]):
+    left = 18
+    right = 18
+    up = 8
+    down = 8
+    if position['x'] < left:
+        left = left-(left-position["x"])
+    if position['x']+right > len(board[0]):
         right = len(board[0]) - position["x"]
-    if position['y'] < 10:
-        up = 10-(10-position["y"])
-    if position['y']+10 > len(board):
+    if position['y'] < up:
+        up = up-(up-position["y"])
+    if position['y']+down > len(board):
         down = len(board)-position["y"]
 
     for width in range(-up,down):

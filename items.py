@@ -57,7 +57,7 @@ def create_random_position(board):
 
 def create_hidden_item(board):
   list_of_hidden_items = []
-  for _ in range(20):
+  for _ in range(10):
     hidden_item ={}
     while True:
       position = create_random_position(board)

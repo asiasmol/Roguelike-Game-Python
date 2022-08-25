@@ -22,8 +22,6 @@ def play():
     items_list = items.create_hidden_item(board)
     is_running = True
     check = "no"
-    print("add_info",add_info)
-    sleep(1)
     while is_running:
         function_board(hiden_board,board,position_player,check, add_info)
         key = util.key_pressed()
@@ -65,8 +63,11 @@ def check_play(hiden_board,position_player,board,player,items_list):
                 items.loot_sickness(player)
                 items_list.remove({"y":position_player['y'],"x": position_player['x']})
             if board[position_player['y']] [position_player['x']] in ["¶","."]:
+                keys.open_door(hiden_board,position_player)
                 keys.open_door(board,position_player)
             if board[position_player['y']] [position_player['x']] == "B":
+                print("kotek")
+                sleep(2)
                 characters.fight_with_boss(player,position_player,board)
             if board[position_player['y']] [position_player['x']] in ["G","S","F"]:
                 return characters.fight_with_mob(characters.choose_mob(board[position_player['y']] [position_player['x']]),player)
