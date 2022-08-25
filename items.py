@@ -3,28 +3,25 @@ from time import sleep
 import characters as c
 import random
 
-cat_items = {"Jagody":(2,0,0), "Kocimiętka":(1,2,0),
- "Bagienne ziele": (-1,2,0)
-  ,"Olejek do futerka":(0,1,1),
-  "Kokardka":(0,0,2)}
+cat_items = {"Blueberry":(2,0,0), "Catnip":(1,2,0),"Swamp herb": (-1,2,0),"Fur oil":(0,1,1),"Bow":(0,0,2),"Treats":(1,1,0), 'Toy':(0,0,1), 'Milk':(1,1,0)}
  
-dog_items = {"Kość":(1,1,0), "Kiełbasa":(2,0,0),
-"Chrupki":(1,0,0), "DentaStix":(1,1,1), "Szczotka do sierści":(0,0,2),
-"Bagienne ziele": (-1,2,0)}
+dog_items = {"Bone":(1,1,0), "Sausage":(2,0,0),
+"Treats":(1,0,0), "DentaStix":(1,1,1), "Brush":(0,0,2),
+"Swamp herb": (-1,2,0)}
 
-Monkey_items = {"Ptasie Jaja":(2,0,0), "Bannan":(2,1,0), "Larwa":(1,0,0),
-"Bagienne ziele": (-1,2,0), "Olejek do futerka":(0,1,1),"Kokardka":(0,0,2), "Piłeczka":(0,1,2), "Rowerek":(0,2,2), "Ubranko":(1,0,1) }
+Monkey_items = {"Bird eggs":(2,0,0), "Banana":(2,1,0), "Larva":(1,0,0),
+"Swamp herb": (-1,2,0), "Fur oil":(0,1,1),"Bow":(0,0,2), "Piłeczka":(0,1,2), "Rowerek":(0,2,2), "Ubranko":(1,0,1) }
 
-hiden_item = {"Szkło":(-1,-1,0),"trutka na szczury":(-2,-1,-2),"mydło":(-1,0,0),"Pokrzywa":(-1,0,0), "Muchomor":(-2,-1,0)}
+hiden_item = {"Glass":(-1,-1,0),"Rat poison":(-2,-1,-2),"Soap":(-1,0,0),"Nettle":(-1,0,0), "Toadstool":(-2,-1,0)}
 
 # key = disase name | value = item or action what makes you sick
-diseases = {"Muchomor":"Ból brzucha","Szkło":"Krwawienie",
-"Bagienne ziele":"Uzależnienie","Pokrzywa":"Poparzenie"}
+diseases = {"Toadstool":"Stomach ache","Glass":"Bleeding",
+"Swamp herb":"Addiction","Nettle":"Burn"}
 
 # key = medicines name | value = disase name
 
-medicines = {"Lek na trawienie":"Ból brzucha", "Bandaż":"Krwawienie",
-"Plasterek na uzależnienia":"Uzależnienie", "Aloes":"Poparzenie"}
+medicines = {"Digestive medicine":"Stomach ache", "Bandage":"Bleeding",
+"Addiction medicine":"Addiction", "Aloe":"Burn"}
 
 
 def conver_dict(dictionary):
@@ -85,17 +82,17 @@ def heal_player(player):
           player['inventory'].remove(keys)
       player["sickness"].remove(medicines[item])
       player['inventory'].remove(item)
-      print('you heal ')
+      print('You are healed !')
 
 def loot_sickness(player):
   sickness = conver_dict(hiden_item)
   sick = random.choice(sickness)
-  if sick in ['Szkło', 'Pokrzywa',"Muchomor"]:
+  if sick in ['Glass', 'Nettle',"Toadstool"]:
     player['inventory'].append(sick)
     player["sickness"].append(diseases[sick])
   add_player_statistic(player,hiden_item,sick,)
   heal_player(player)
-  print(f"O nie właśnie stanołeś na {sick}")
+  print(f"Oh no, you just stood on {sick}")
   sleep(2)
 
 def add_player_statistic(player,inventory,item):

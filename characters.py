@@ -70,6 +70,8 @@ def fight_with_mob(mob, player):
         inventory.loot_mobs(player['name'],player['inventory'],mob['name'])
         items.add_items(player)
         items.heal_player(player)
+    elif player["health"] <0:
+        print("You lost the game! ")
     else:
         print("Run away you little shit")
     sleep(2)
