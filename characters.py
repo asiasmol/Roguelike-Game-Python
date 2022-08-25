@@ -28,7 +28,7 @@ def choose_mob(mob):
     if mob == 'security_guard'or mob =="G":
         return{"name":"Security_guard","icon":"G","health": 50, "stamina": 5, "items":['random_item']}       
     if mob == 'Boss'or mob =="B":
-        return{"name":"BOSS","icon":"G","health": 200, "stamina": 7, "items":['random_item']}
+        return{"name":"BOSS","icon":"G","health": 250, "stamina": 7, "items":['random_item']}
 
 def fight_with_mob(mob, player,choice):
     kill_mob = mob['health']
@@ -57,10 +57,10 @@ def fight_with_mob(mob, player,choice):
                         kill_mob -= damege
                         print(f'you gave: ',damege)
                     if player_choice == 'Heal':
-                        player['health'] +=1
+                        player['health'] +=8
                         print(f'You gained one hp more.')
                     if player_choice == 'Increase stamina':
-                        player_stamina +=1
+                        player_stamina +=4
                         print(f'You gained one stamina. ')
                     if player_choice == 'Run':
                         return("Run")

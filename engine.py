@@ -1,4 +1,3 @@
-import characters
 
 
 def create_board(width, height):
