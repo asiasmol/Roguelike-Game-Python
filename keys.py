@@ -11,7 +11,7 @@ def open_door(board,position):
     if position['y'] == 41 and position['x'] == 18:
         for i in range(3):
             board[58][87+i] = " "
-    if position['y'] == 61 and position['x'] == 83:
+    if position['y'] == 65 and position['x'] == 83:
         for i in range(3):
             board[63][82+i] = " "
 
