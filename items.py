@@ -4,15 +4,17 @@ import characters as c
 import random
 import inventory
 
-cat_items = {"Blueberry": (10, 0, 0), "Catnip": (7, 2, 0), "Swamp herb": (-1, 2, 0), "Fur oil": (
-    0, 1, 1), "Treats": (7, 1, 0), 'Toy': (4, 0, 1), 'Milk': (8, 1, 0),"Toadstool": (-2, -1, 0)}
+cat_items = {"Blueberry": (10, 0, 3), "Catnip": (7, 2, 0), "Swamp herb": (-1, 2, 1), 
+            "Fur oil": (0, 1, 1), "Treats": (7, 1, 0), 'Toy': (4, 0, 1), 
+            'Milk': (8, 1, 2), "Toadstool": (-2, -1, 0), "Mouse": (8, 2, 2)}
 
-dog_items = {"Bone": (6, 1, 0), "Dirt": (2, -2, 2), "Snack": (15, 0, 0), "stick": (7, 1, 3), "Sausage": (8, 0, 0),
-              "DentaStix": (8, 1, 1), "Brush": (0, 0, 2),
-             "Swamp herb": (-1, 2, 0),"Toadstool": (-2, -1, 0)}
+dog_items = {"Bone": (6, 1, 3), "Dirt": (2, -2, 1), "Snack": (15, 0, 1), 
+            "stick": (7, 1, 0), "Sausage": (8, 0, 1), "DentaStix": (8, 1, 0), 
+            "Brush": (0, 0, 2), "Swamp herb": (-1, 2, 2),"Toadstool": (-2, -1, 0)}
 
-Monkey_items = {"Bird eggs": (8, 0, 0), "Banana": (10, 1, 0), "Larva": (15, 0, 0),
-                "Swamp herb": (-1, 2, 0), "Fur oil": (0, 1, 1), "Ball": (0, 1, 2), "Bike": (0, 2, 2), "clothes": (9, 0, 1),"Toadstool": (-2, -1, 0)}
+Monkey_items = {"Bird eggs": (8, 1, 0), "Banana": (10, 1, 3), "Larva": (15, 0, 1),
+                "Swamp herb": (-1, 2, 1), "Fur oil": (0, 1, 1), "Ball": (0, 1, 2), 
+                "Bike": (0, 2, 0), "clothes": (9, 0, 1),"Toadstool": (-2, -1, 0)}
 
 hiden_item = {"Glass": (-1, -1, 0), "Rat poison": (-2, -1, -2),
               "Soap": (-1, 0, 0), "Nettle": (-1, 0, 0), "Toadstool": (-2, -1, 0)}
