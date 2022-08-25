@@ -7,7 +7,7 @@ def ipnut_player():
 
 def create_player(kind_player):
     dog = {"name":"Dog","icon":"ࢥ","health": 10, "sweetness": 15, "stamina": 10, "sickness": [],"inventory": [ ]}
-    cat = {"name":"Cat","icon":"Დ","health": 7, "sweetness": 20, "stamina": 15, "sickness": [],"inventory": [ ]}
+    cat = {"name":"Cat","icon":"Დ","health": 7, "sweetness": 20, "stamina": 15, "sickness": ["Ból brzucha"],"inventory": [ ]}
     Monkey = {"name":"Monkey","icon":"ꚗ","health": 5, "sweetness": 10, "stamina": 8, "sickness": [],"inventory": [ ]}
     
     while True:

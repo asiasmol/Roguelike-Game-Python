@@ -1,3 +1,4 @@
+from test import start_thread
 import util
 import engine
 import ui
@@ -5,7 +6,8 @@ import inventory as inv
 import characters
 import players
 import keys
-
+import sick 
+import threading
 
 def play():
     player = players.create_player(players.ipnut_player())
@@ -13,6 +15,8 @@ def play():
     board = engine.create_board_from_file("board.sty")
     is_running = True
     characters.put_mob_to_map(board)
+    # threading.Thread(target=lambda: sick.every(10, sick.removal_statistic, player)).start()
+    start_thread(player)
     while is_running:
         engine.put_position_player_on_board(board, position_player)
         ui.display_board(board,position_player)
