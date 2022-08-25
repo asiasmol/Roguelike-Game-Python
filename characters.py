@@ -1,4 +1,3 @@
-from operator import mod
 import random
 from time import sleep
 import time
@@ -53,14 +52,14 @@ def fight_with_mob(mob, player):
                 player_stamina +=1
                 print(f'You gained one stamina. ')
             if player_choice == 'Run':
-                break
+                return("Run")
             round +=1
         else:
             print('Invalid input')
     if kill_mob <0:
         print("Nice you kill",mob['name'])
         inventory.loot_mobs(player['name'],player['inventory'],mob['name'])
-        items.add_statistic(player)
+        items.add_items(player)
         items.heal_player(player)
     elif player["health"] <0:
         print("You lose game sory ")
