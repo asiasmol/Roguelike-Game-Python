@@ -1,0 +1,5 @@
+item = {"x":3,'y':3}
+
+kot = [{"x":4,'y':3}]
+
+print(item in kot)

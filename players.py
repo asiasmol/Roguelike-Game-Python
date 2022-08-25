@@ -19,7 +19,6 @@ def create_player(kind_player):
             return Monkey
         else:
             print("Invalid input!!")
-
 def Position_player(pet):
     return {
         'icon': pet,

@@ -52,7 +52,7 @@ def fight_with_mob(mob, player):
                 player_stamina +=1
                 print(f'You gained one stamina. ')
             if player_choice == 'Run':
-                break
+                return("Run")
             round +=1
         else:
             print('Invalid input')
