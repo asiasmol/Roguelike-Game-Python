@@ -12,7 +12,7 @@ def adding_items():
     pass
 #Adds random items from mob
 def loot_mobs(player, inventory, mob):
-    mob_loot = {"Fox":1, "Shelter_worker":2, "Security_guard":3}
+    mob_loot = {"Fox":1, "Shelter_worker":2, "Security_guard":3, "BOSS":3}
 
     for _ in range(mob_loot[mob]):
         if random.randint(0,10) > 4:
