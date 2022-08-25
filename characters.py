@@ -53,13 +53,14 @@ def fight_with_mob(mob, player):
                 print(f'You gained one stamina. ')
             if player_choice == 'Run':
                 break
+            round +=1
         else:
             print('Invalid input')
-        round +=1
     if kill_mob <0:
         print("Nice you kill",mob['name'])
         inventory.loot_mobs(player['name'],player['inventory'],mob['name'])
         items.add_statistic(player)
+        items.heal_player(player)
     elif player["health"] <0:
         print("You lose game sory ")
     else:

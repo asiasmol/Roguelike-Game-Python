@@ -14,7 +14,7 @@ def remove_position_player_on_board(board, player):
     board[player['y']][player['x']] = ' '
 
 def position_player_is_free(board, player,key):
-    mobs = ["G","S","F","B","¶"]
+    mobs = ["G","S","F","B","¶",".","H","i"]
     if key == 'w':
         if board[player['y']-1][player['x']] in mobs:
             return True
