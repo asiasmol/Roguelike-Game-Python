@@ -66,4 +66,4 @@ def check_play(hiden_board,position_player,board,player,items_list):
             if board[position_player['y']] [position_player['x']] == "B":
                 characters.fight_with_boss(player, characters.choose_mob(board[position_player['y']] [position_player['x']]), board, position_player)
             if board[position_player['y']] [position_player['x']] in ["G","S","F"]:
-                return characters.fight_with_mob(characters.choose_mob(board[position_player['y']] [position_player['x']]), board, position_player)
+                return characters.fight_with_mob(characters.choose_mob(board[position_player['y']] [position_player['x']]), player)
