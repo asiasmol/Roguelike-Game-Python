@@ -1,6 +1,0 @@
-diseases = {"Ból brzucha":"Muchomor", "Przeziębienie":"Zimno/Chłód", "Krwawienie":"Szkło",
-"Uzależnienie":"3xBagienne ziele", "Poparzenie":"Pokrzywa"}
-
-
-
-print("Ból brzucha" in diseases)

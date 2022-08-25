@@ -1,5 +1,6 @@
 import util
 import gamelogic
+
 def Menu():
     Choise = input("Menu:\nPlay\nRules\nExit\n").capitalize()
     if Choise in ["Play","Rules","Exit"]:

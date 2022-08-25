@@ -1,8 +1,13 @@
 # key = Item name | value = item statistics(Hp,Stamina,Sweet)they can be negative or positive 
-import characters
+from time import sleep
+import characters as c
 import random
-import engine
 
+cat_items = {"Jagody":(2,0,0), "Kocimiętka":(1,2,0),
+ "Bagienne ziele": (-1,2,0), "Muchomor":(-2,-1,0)
+  ,"Olejek do futerka":(0,1,1),
+  "Kokardka":(0,0,2)}
+ 
 dog_items = {"Kość":(1,1,0), "Kiełbasa":(2,0,0),
 "Chrupki":(1,0,0), "DentaStix":(1,1,1), "Szczotka do sierści":(0,0,2),
 "Bagienne ziele": (-1,2,0), "Muchomor":(-2,-1,0)}
@@ -26,6 +31,9 @@ medicines = {"Lek na trawienie":"Ból brzucha", "Bandaż":"Krwawienie",
 def conver_dict(dictionary):
     return [keys for keys in dictionary.keys()]
 
+def conver_dict_item(dictionary):
+    return [choise for keys,choise in dictionary.items()]
+
 def chose_inventory(name):
   if name == "Cat":
     return cat_items
@@ -40,11 +48,10 @@ def add_statistic(player):
     if item in diseases:
       if diseases[item] not in player["sickness"]:
         player["sickness"].append(diseases[item])
-    if item in medicines:
-      player["sickness"].remove(medicines[item])
-    player["health"] += inventory[item][0]
-    player['sweetness'] += inventory[item][1]
-    player['stamina'] += inventory[item][2]
+    if item in chose_inventory(player["name"]):
+      player["health"] += inventory[item][0]
+      player['sweetness'] += inventory[item][1]
+      player['stamina'] += inventory[item][2]
 
 def create_random_position(board):
     random_y = random.randint(1, len(board)-1)
@@ -65,5 +72,20 @@ def create_hidden_item(board):
   return list_of_hidden_items
   
 
+def put_medicines_to_map(board):
+    for _ in range(10):
+        c.create_mob(board,{"icon":"i"})
 
+def loot_medicine(player):
+  player['inventory'].append(random.choice(conver_dict(medicines)))
+  heal_player(player)
 
+def heal_player(player):
+  for item in player['inventory']:
+    if item in conver_dict(medicines) and medicines[item] in player["sickness"] :
+      for keys,ite in diseases.items():
+        if diseases[keys] == medicines[item]:
+          player['inventory'].remove(keys)
+      player["sickness"].remove(medicines[item])
+      player['inventory'].remove(item)
+      print('you heal ')

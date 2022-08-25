@@ -11,8 +11,5 @@ def main():
         util.clear_screen()
         is_running = Menu.Menu()
 
-
-
-
 if __name__ == '__main__':
     main()

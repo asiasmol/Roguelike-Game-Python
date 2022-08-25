@@ -15,7 +15,7 @@ def loot_mobs(player, inventory, mob):
     mob_loot = {"Fox":1, "Shelter_worker":2, "Security_guard":3}
 
     for _ in range(mob_loot[mob]):
-        if random.randint(0,10) > 0:
+        if random.randint(0,10) > 4:
             if player == "Cat":    
                 inventory.append(random.choice(items.conver_dict(items.cat_items)))
             elif player == "Dog":
