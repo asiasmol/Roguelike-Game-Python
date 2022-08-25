@@ -24,10 +24,9 @@ def display_board(board,position,add_info):
     if  "add_inf" in add_info and "start" in add_info and time.time() - add_info["start"] < 5:
         print(add_info["add_inf"])
 
-def choosing_a_board():
+def choosing_a_board(choice):
     while True:
         util.clear_screen()
-        choice = input("Select boards 1-3: ")
         if choice == "1":
             return 1,engine.create_board_from_file("boards/board_1/hiden_board.sty"), engine.create_board_from_file("boards/board_1/board.sty")
         if choice == "2":

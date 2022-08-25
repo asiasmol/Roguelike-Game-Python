@@ -36,21 +36,21 @@ def key_map_1(board,position):
 
 def key_map_2(board,position):
     if position['y'] == 15 and position['x'] == 27:
-        for i in range(2):
+        for i in range(3):
             board[32][68+i] = " "
     if position['y'] == 39 and position['x'] == 21:
-        for i in range(2):
+        for i in range(3):
             board[55][74+i] = " "
     if position['y'] == 89 and position['x'] == 86:
-        for i in range(2):
+        for i in range(3):
             board[105][33+i] = " "
     if position['y'] == 144 and position['x'] == 6:
             board[162][70] = " "
     if position['y'] == 145 and position['x'] == 85:
-        for i in range(2):
+        for i in range(3):
             board[189][41+1] = " "
     if position['y'] == 45 and position['x'] == 20:
-        for i in range(2):
+        for i in range(3):
             board[191][41+1] = " "
     if position['y'] == 133 and position['x'] == 74:
             board[1][47] = " "
@@ -62,7 +62,11 @@ def key_map_2(board,position):
 
 
 def key_map_3(board,position):
-    pass
+    if position['y'] == 22 and position['x'] == 18:
+        for i in range(2):
+            board[3][29+i] = " "
+    if position['y'] == 8 and position['x'] == 62:
+            board[0][11] = " "
 
 def open_door(number_board,board,position):
     if number_board == 1:
