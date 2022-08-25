@@ -1,4 +1,3 @@
-from time import sleep
 import util
 import engine
 import ui
@@ -6,6 +5,8 @@ import inventory as inv
 import characters
 import players
 import keys
+import sick 
+import threading
 import items
 
 

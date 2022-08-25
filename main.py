@@ -1,6 +1,5 @@
 from time import sleep
 import util
-import fontawesome as fa
 import Menu
 
 
