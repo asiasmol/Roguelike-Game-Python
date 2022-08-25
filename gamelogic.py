@@ -15,8 +15,6 @@ def play():
     player = players.create_player(players.ipnut_player())
     position_player = players.Position_player(player['icon'])
     board, hiden_board = ui.choosing_a_board()
-    # board = engine.create_board_from_file("hiden_board.sty")
-    # hiden_board = engine.create_board_from_file("board.sty")
     items.put_medicines_to_map(hiden_board)
     test.start_thread(player,add_info)
     items_list = items.create_hidden_item(board)

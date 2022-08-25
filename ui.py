@@ -1,6 +1,5 @@
-from operator import le
+import util
 import time
-from turtle import down
 import engine
 
 def display_board(board,position,add_info):
@@ -26,10 +25,12 @@ def display_board(board,position,add_info):
         print(add_info["add_inf"])
 
 def choosing_a_board():
-    choice = input("Select boards 1-3: ")
-    if choice == "1":
-        return engine.create_board_from_file("boards/board_1/hiden_board.sty"), engine.create_board_from_file("boards/board_1/board.sty")
-    if choice == "2":
-        return engine.create_board_from_file("boards/board_2/hiden_board.sty"), engine.create_board_from_file("boards/board_2/board.sty")
-    if choice == "2":
-        return engine.create_board_from_file("boards/board_3/hiden_board.sty"), engine.create_board_from_file("boards/board_3/board.sty")
+    while True:
+        util.clear_screen()
+        choice = input("Select boards 1-3: ")
+        if choice == "1":
+            return engine.create_board_from_file("boards/board_1/hiden_board.sty"), engine.create_board_from_file("boards/board_1/board.sty")
+        if choice == "2":
+            return engine.create_board_from_file("boards/board_2/hiden_board.sty"), engine.create_board_from_file("boards/board_2/board.sty")
+        if choice == "2":
+            return engine.create_board_from_file("boards/board_3/hiden_board.sty"), engine.create_board_from_file("boards/board_3/board.sty")
