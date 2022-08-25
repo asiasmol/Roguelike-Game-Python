@@ -15,15 +15,11 @@ def play():
     player = players.create_player(players.ipnut_player())
     position_player = players.Position_player(player['icon'])
     board, hiden_board = ui.choosing_a_board()
-    # board = engine.create_board_from_file("hiden_board.sty")
-    # hiden_board = engine.create_board_from_file("board.sty")
     items.put_medicines_to_map(hiden_board)
     test.start_thread(player,add_info)
     items_list = items.create_hidden_item(board)
     is_running = True
     check = "no"
-    print("add_info",add_info)
-    sleep(1)
     while is_running:
         function_board(hiden_board,board,position_player,check, add_info)
         key = util.key_pressed()
@@ -65,6 +61,7 @@ def check_play(hiden_board,position_player,board,player,items_list):
                 items.loot_sickness(player)
                 items_list.remove({"y":position_player['y'],"x": position_player['x']})
             if board[position_player['y']] [position_player['x']] in ["¶","."]:
+                keys.open_door(hiden_board,position_player)
                 keys.open_door(board,position_player)
             if board[position_player['y']] [position_player['x']] == "B":
                 characters.fight_with_boss(player, characters.choose_mob(board[position_player['y']] [position_player['x']]), board, position_player)

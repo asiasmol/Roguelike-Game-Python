@@ -42,29 +42,33 @@ def fight_with_mob(mob, player):
             print('Mob turn')
             player['health'] -= mob['stamina'] * (random.randint(1,10)/10)
             print(f'You have ', player['health'])
-        player_choice = input('Choose which skill would you like to use \nAttack\nIncrease stamina\nHeal\nRun\n ').capitalize()
-        if player_choice in player_skills:
-            if player_choice == 'Attack':
-                kill_mob -= player_stamina * (random.randint(1,10)/10)
-                print(f'Mob have ', kill_mob)
-            if player_choice == 'Heal':
-                player['health'] +=1
-                print(f'You gained one hp more.')
-            if player_choice == 'Increase stamina':
-                player_stamina +=1
-                print(f'You gained one stamina. ')
-            if player_choice == 'Run':
-                return("Run")
-            round +=1
-        else:
-            print('Invalid input')
-    if kill_mob <0:
+        while True:
+            util.clear_screen()
+            player_choice = input('Choose which skill would you like to use \nAttack\nIncrease stamina\nHeal\nRun\n ').capitalize()
+            if player_choice in player_skills:
+                if player_choice == 'Attack':
+                    kill_mob -= player_stamina * (random.randint(1,10)/10)
+                    print(f'Mob have ', kill_mob)
+                if player_choice == 'Heal':
+                    player['health'] +=1
+                    print(f'You gained one hp more.')
+                if player_choice == 'Increase stamina':
+                    player_stamina +=1
+                    print(f'You gained one stamina. ')
+                if player_choice == 'Run':
+                    return("Run")
+                round +=1
+                break
+            else:
+                print('Invalid input')
+
+    if player["health"] <0:
+        print("You lose game sory ")
+    elif kill_mob <0:
         print("Nice you kill",mob['name'])
         inventory.loot_mobs(player['name'],player['inventory'],mob['name'])
         items.add_items(player)
         items.heal_player(player)
-    elif player["health"] <0:
-        print("You lose game sory ")
     else:
         print("Run away you little shit")
     sleep(2)
