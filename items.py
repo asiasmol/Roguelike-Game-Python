@@ -13,7 +13,7 @@ dog_items = {"Kość":(1,1,0), "Kiełbasa":(2,0,0),
 "Bagienne ziele": (-1,2,0)}
 
 Monkey_items = {"Ptasie Jaja":(2,0,0), "Bannan":(2,1,0), "Larwa":(1,0,0),
-"Bagienne ziele": (-1,2,0), "Olejek do futerka":(0,1,1),"Kokardka":(0,0,2)}
+"Bagienne ziele": (-1,2,0), "Olejek do futerka":(0,1,1),"Kokardka":(0,0,2), "Piłeczka":(0,1,2), "Rowerek":(0,2,2), "Ubranko":(1,0,1) }
 
 hiden_item = {"Szkło":(-1,-1,0),"trutka na szczury":(-2,-1,-2),"mydło":(-1,0,0),"Pokrzywa":(-1,0,0), "Muchomor":(-2,-1,0)}
 
