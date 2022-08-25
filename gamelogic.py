@@ -22,6 +22,8 @@ def play():
     items_list = items.create_hidden_item(board)
     is_running = True
     check = "no"
+    print("add_info",add_info)
+    sleep(1)
     while is_running:
         function_board(hiden_board,board,position_player,check, add_info)
         key = util.key_pressed()
