@@ -74,7 +74,7 @@ def fight_with_mob(mob, player,choice):
         print("You lose game sory ")
         gamelogic.play(p.take_player(player["name"]),choice)
     elif kill_mob <0:
-        print("Nice you kill",mob['name'])
+        print("Nice you killed",mob['name'])
         inventory.loot_mobs(player['name'],player['inventory'],mob['name'])
         items.add_items(player)
         items.heal_player(player)
@@ -95,11 +95,11 @@ def fight_with_boss(player, mob, board, position_player,choice):
     if player["sweetness"] >= 20:
         print("Your journey is slowly coming to an end.\n")
         sleep(2)
-        print("The time has come to move your last important decision:\n")
+        print("The time has come to make your last important decision:\n")
         sleep(2)
         print("1. You can be adopted!\n")
         sleep(2)
-        print("2.if you don't want to be adopted you can fight with the boss and escape from the shelter.\n")
+        print("2. If you don't want to be adopted you can fight with the boss and escape from the shelter.\n")
         sleep(2)
         print("The choice is up to you!!")
         decision = input("What you choose 1 or 2 ?")
@@ -109,10 +109,10 @@ def fight_with_boss(player, mob, board, position_player,choice):
             sleep(4)
         else: 
             print("You chose to fight! Good luck!")
-            sleep(5)
+            sleep(3)
             fight_with_mob(choose_mob(board[position_player['y']] [position_player['x']]),player,choice)
     else: 
         print("You don't have enought sweetness! You have to fight with boss!!")
-        sleep(5)
+        sleep(4)
         fight_with_mob(choose_mob(board[position_player['y']] [position_player['x']]),player,choice)
     gamelogic.get_player()
