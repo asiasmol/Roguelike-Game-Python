@@ -83,7 +83,7 @@ def fight_with_mob(mob, player,choice):
     sleep(2)
 
 
-def put_mob_to_map(board,fox = 2,shelter_worker = 2,security_guard = 2):
+def put_mob_to_map(board,fox = 40,shelter_worker = 40,security_guard = 40):
     mobs = [fox,shelter_worker,security_guard]
     for mob in ("fox","shelter_worker","security_guard"):
         for _ in mobs:
