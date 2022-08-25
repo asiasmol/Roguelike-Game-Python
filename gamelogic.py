@@ -7,19 +7,21 @@ import characters
 import players
 import keys
 import sick 
-import threading
+import threading as th
 import items
 
 
 def play():
+    add_info = {}
     player = players.create_player(players.ipnut_player())
     position_player = players.Position_player(player['icon'])
     board = engine.create_board_from_file("hiden_board.sty")
     hiden_board = engine.create_board_from_file("board.sty")
     items.put_medicines_to_map(hiden_board)
+    start_thread(player,add_info)
     is_running = True
     while is_running:
-        function_board(hiden_board,board,position_player)
+        function_board(hiden_board,board,position_player, add_info)
         key = util.key_pressed()
         if key == 'q':
             is_running = False
@@ -42,10 +44,10 @@ def play():
         util.clear_screen()
 
 
-def function_board(hiden_board,board,position_player):
+def function_board(hiden_board,board,position_player, add_info):
         engine.put_position_player_on_board(hiden_board, position_player)
         engine.put_position_player_on_board(board, position_player)
-        ui.display_board(hiden_board,position_player)
+        ui.display_board(hiden_board,position_player,add_info)
         engine.remove_position_player_on_board(hiden_board, position_player)
         engine.remove_position_player_on_board(board, position_player)
 
@@ -55,6 +57,6 @@ def check_play(hiden_board,position_player,board,player):
             if board[position_player['y']] [position_player['x']] in ["¶","."]:
                 keys.open_door(board,position_player)
             if board[position_player['y']] [position_player['x']] == "B":
-                print("walka z bosem")
+                characters.fight_with_boss(player,position_player,board)
             if board[position_player['y']] [position_player['x']] in ["G","S","F"]:
                 characters.fight_with_mob(characters.choose_mob(board[position_player['y']] [position_player['x']]),player)

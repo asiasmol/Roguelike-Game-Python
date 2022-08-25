@@ -1,30 +1,21 @@
-import time, traceback
 import time
 
-def every(delay, task, player):
-    next_time = time.time() + delay
-    while True:
-        time.sleep(max(0, next_time - time.time()))
-        try:
-            task(player)
-        except Exception:
-            traceback.print_exc()
-        next_time += (time.time() - next_time) // delay * delay + delay
-
-
-def removal_statistic(player):
+def removal_statistic(player, add_info):
     sick = {"Ból brzucha": 1, "Krwawienie": 2, "Uzależnienie": 2, "Poparzenie": 1}
     if "Ból brzucha" in player["sickness"]:
         player['stamina'] -= sick["Ból brzucha"]
-        time.sleep(5)
-        print("Boli Cię brzuszek stamina -1")
+        add_info["add_inf"] = "Your tummy hurts !! stamina -2"
+        add_info["start"] = time.time()
     if "Krwawienie" in player["sickness"]:
         player['health'] -= sick["Krwawienie"]
-        print("Boli Cię brzuszek health -2")
+        add_info["add_inf"] = "You're bleeding !! health -2"
+        add_info["start"] = time.time()
     if "Uzależnienie" in player["sickness"]:
         player["sweetness"] -= sick["Uzależnienie"]
-        print("Boli Cię brzuszek sweetness -2")
+        add_info["add_inf"] = "You're addicted !! sweetness -2"
+        add_info["start"] = time.time()
     if "Poparzenie" in player["sickness"]:
         player['health'] -= sick["Poparzenie"]
-        print("Boli Cię brzuszek health -1")
+        add_info["add_inf"] = "You are burned!! health -1"
+        add_info["start"] = time.time()
 

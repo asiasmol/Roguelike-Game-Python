@@ -1,6 +1,7 @@
 from operator import mod
 import random
 from time import sleep
+import time
 import inventory
 import items
 import util
@@ -74,3 +75,19 @@ def put_mob_to_map(board,fox = 2,shelter_worker = 2,security_guard = 2):
         for _ in mobs:
             create_mob(board,choose_mob(mob))
     
+
+def fight_with_boss(player,position_player,board):
+    if player["sweetness"] == 20:
+        print(f""" Your journey is slowly coming to an end.\n{time.sleep(1)}
+            The time has come to move your last important decision:\n{time.sleep(1)}
+            1. You can be adopted!\n{time.sleep(1)}
+            2.if you don't want to be adopted you can fight with the boss and escape from the shelter.\n{time.sleep(1)}
+            The choice is up to you!!""")
+        decision = input("What you choose 1 or 2 ?")
+        if decision == "1":
+            board[position_player['y']] [position_player['x']] = "♥"
+            print("""The Boss thinks that you are sweet enough \n
+                and he fell in love with you.\n 
+                You are adopted!!""")
+        else: 
+            fight_with_mob(choose_mob(board[position_player['y']] [position_player['x']]),player)
