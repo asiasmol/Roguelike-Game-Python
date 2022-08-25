@@ -41,7 +41,7 @@ def play():
                 hiden_board = board
             if position_player['y'] == 0:
                 util.clear_screen()
-                print("congratulation you escepe")
+                print("Congratulation, you esceped from the shelted!")
                 util.key_pressed()
                 return False
         check = check_play(hiden_board,position_player,board,player,items_list)

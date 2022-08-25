@@ -57,12 +57,12 @@ def fight_with_mob(mob, player):
         else:
             print('Invalid input')
     if kill_mob <0:
-        print("Nice you kill",mob['name'])
+        print("Nice you killed",mob['name'])
         inventory.loot_mobs(player['name'],player['inventory'],mob['name'])
         items.add_items(player)
         items.heal_player(player)
     elif player["health"] <0:
-        print("You lose game sory ")
+        print("You lost the game! ")
     else:
         print("Run away you little shit")
     sleep(2)
