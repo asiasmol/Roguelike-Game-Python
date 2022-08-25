@@ -8,7 +8,7 @@ def Menu():
         if Choise in ["Play","Rules","Exit"]:
             if Choise == "Play":
                 #introduction()
-                gamelogic.get_player()
+                return gamelogic.get_player()
             elif Choise == "Rules":
                 Rules()
                 return True

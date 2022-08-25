@@ -6,7 +6,7 @@ def ipnut_player():
     kind_player = input("Choose a character: 1-dog, 2-cat, 3-Monkey:")
     return kind_player
 
-def create_player(kind_player):
+def create_player(kind_player= 0):
     dog = {"name":"Dog","icon":"ࢥ","health": 100, "sweetness": 15, "stamina": 6, "sickness": [],"inventory": [ ]}
     cat = {"name":"Cat","icon":"Დ","health": 70, "sweetness": 20, "stamina": 7, "sickness": [],"inventory": [ ]}
     Monkey = {"name":"Monkey","icon":"ꚗ","health": 50, "sweetness": 10, "stamina": 7, "sickness": [],"inventory": [ ]}
@@ -20,6 +20,8 @@ def create_player(kind_player):
             return Monkey
         else:
             print("Invalid input!!")
+            kind_player = ipnut_player()
+
 def Position_player(pet):
     return {
         'icon': pet,

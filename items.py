@@ -62,9 +62,9 @@ def create_random_position(board):
     return {'y': random_y, 'x': random_x}
 
 
-def create_hidden_item(board):
+def create_hidden_item(board,how_many= 10):
     list_of_hidden_items = []
-    for _ in range(5):
+    for _ in range(how_many):
         hidden_item = {}
         while True:
             position = create_random_position(board)
@@ -76,8 +76,8 @@ def create_hidden_item(board):
     return list_of_hidden_items
 
 
-def put_medicines_to_map(board):
-    for _ in range(15):
+def put_medicines_to_map(board,how_many = 20):
+    for _ in range(how_many):
         c.create_mob(board, {"icon": "i"})
 
 
@@ -112,7 +112,7 @@ def loot_sickness(player):
     add_player_statistic(player, hiden_item, sick,)
     heal_player(player)
     print(f"Oh no, you just stood on {sick}")
-    sleep(2)
+    sleep(1)
 
 
 def add_player_statistic(player, inventory, item):

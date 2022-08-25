@@ -2,7 +2,14 @@ import random
 import items
 # Display inventory to console
 def display_inventory(inventory):
-    return [k for k in inventory]
+    inventory_to_print = {}
+    for item in inventory:
+        if item in inventory_to_print:
+            inventory_to_print[item] += 1
+        else:
+            inventory_to_print[item] = 1
+    for k,i in inventory_to_print.items():
+        print(k,i)
 
 #Picking items from mobs
 def picking_items():

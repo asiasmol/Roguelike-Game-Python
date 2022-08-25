@@ -92,7 +92,7 @@ def put_mob_to_map(board,fox = 40,shelter_worker = 40,security_guard = 40):
 
 
 def fight_with_boss(player, mob, board, position_player,choice):
-    if player["sweetness"] == 20:
+    if player["sweetness"] >= 20:
         print("Your journey is slowly coming to an end.\n")
         sleep(2)
         print("The time has come to move your last important decision:\n")
@@ -106,7 +106,7 @@ def fight_with_boss(player, mob, board, position_player,choice):
         if decision == "1":
             print("""\nThe Boss thinks that you are sweet enough and he fell in love with you.\n 
             You are adopted!!""")
-            sleep(7)
+            sleep(4)
         else: 
             print("You chose to fight! Good luck!")
             sleep(5)
