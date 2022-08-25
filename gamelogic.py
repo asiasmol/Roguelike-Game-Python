@@ -1,3 +1,4 @@
+from time import sleep
 import util
 import engine
 import ui
@@ -5,8 +6,6 @@ import inventory as inv
 import characters
 import players
 import keys
-import sick 
-import threading
 import items
 
 
@@ -16,6 +15,9 @@ def play():
     board = engine.create_board_from_file("hiden_board.sty")
     hiden_board = engine.create_board_from_file("board.sty")
     items.put_medicines_to_map(hiden_board)
+    items_list = items.create_hidden_item(board)
+    print(items_list)
+    
     is_running = True
     check = "no"
     while is_running:
@@ -38,8 +40,9 @@ def play():
                 print("congratulation you escepe")
                 util.key_pressed()
                 return False
-        check = check_play(hiden_board,position_player,board,player)
+        check = check_play(hiden_board,position_player,board,player,items_list)
         util.clear_screen()
+        print(position_player)
 
 
 def function_board(hiden_board,board,position_player,check):
@@ -52,11 +55,14 @@ def function_board(hiden_board,board,position_player,check):
         else:
             ui.display_board(hiden_board,position_player)
 
-def check_play(hiden_board,position_player,board,player):
+def check_play(hiden_board,position_player,board,player,items_list):
             if hiden_board[position_player['y']] [position_player['x']] == "i":
                 items.loot_medicine(player)
+            if {"y":position_player['y'],"x": position_player['x']} in items_list:
+                items.loot_sickness(player)
+                items_list.remove({"y":position_player['y'],"x": position_player['x']})
             if board[position_player['y']] [position_player['x']] in ["¶","."]:
-                keys.open_door(hiden_board,board,position_player)
+                keys.open_door(board,position_player)
             if board[position_player['y']] [position_player['x']] == "B":
                 print("walka z bosem")
             if board[position_player['y']] [position_player['x']] in ["G","S","F"]:

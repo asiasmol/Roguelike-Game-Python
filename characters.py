@@ -58,7 +58,7 @@ def fight_with_mob(mob, player):
     if kill_mob <0:
         print("Nice you kill",mob['name'])
         inventory.loot_mobs(player['name'],player['inventory'],mob['name'])
-        items.add_statistic(player)
+        items.add_items(player)
         items.heal_player(player)
     elif player["health"] <0:
         print("You lose game sory ")
