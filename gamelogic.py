@@ -4,6 +4,7 @@ import ui
 import inventory as inv
 import characters
 import players
+import items
 
 
 def play():
@@ -12,6 +13,7 @@ def play():
     board = engine.create_board_from_file("board.sty")
     is_running = True
     characters.put_mob_to_map(board)
+    items.create_hidden_item(board)
     while is_running:
         engine.put_position_player_on_board(board, position_player)
         ui.display_board(board,position_player)

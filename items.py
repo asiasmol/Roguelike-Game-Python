@@ -1,11 +1,8 @@
 # key = Item name | value = item statistics(Hp,Stamina,Sweet)they can be negative or positive 
+import characters
+import random
+import engine
 
-
-cat_items = {"Muchomor":(-2,-1,0)}#"Jagody":(2,0,0), "Kocimiętka":(1,2,0),
- #"Bagienne ziele": (-1,2,0), "Muchomor":(-2,-1,0)
-#  ,"Olejek do futerka":(0,1,1),
- # "Kokardka":(0,0,2)}
- 
 dog_items = {"Kość":(1,1,0), "Kiełbasa":(2,0,0),
 "Chrupki":(1,0,0), "DentaStix":(1,1,1), "Szczotka do sierści":(0,0,2),
 "Bagienne ziele": (-1,2,0), "Muchomor":(-2,-1,0)}
@@ -49,5 +46,24 @@ def add_statistic(player):
     player['sweetness'] += inventory[item][1]
     player['stamina'] += inventory[item][2]
 
-    
+def create_random_position(board):
+    random_y = random.randint(1, len(board)-1)
+    random_x = random.randint(1, len(board[0])-1)
+    return {'y':random_y, 'x': random_x}
+
+def create_hidden_item(board):
+  list_of_hidden_items = []
+  for _ in range(10):
+    hidden_item ={}
+    while True:
+      position = create_random_position(board)
+      if position not in list_of_hidden_items and board[position['y'][position['x']]] == ' ':
+        hidden_item['y'] = position['y']  
+        hidden_item['x'] = position['x']  
+        break
+    list_of_hidden_items.append(hidden_item)
+  return list_of_hidden_items
+  
+
+
 

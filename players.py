@@ -1,5 +1,5 @@
 import util
-import fontawesome as fa
+#import fontawesome as fa
 def ipnut_player():
     util.clear_screen()
     kind_player = input("Choose a character: 1-dog, 2-cat, 3-Monkey:")

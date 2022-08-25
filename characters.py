@@ -1,4 +1,3 @@
-from operator import mod
 import random
 from time import sleep
 import inventory
