@@ -16,7 +16,7 @@ def Menu():
                 return False
 
 def introduction():
-    print("Welcome to the 'Get out of animal shelter' game !")
+    print("Welcome to the 'Get out of' game !")
     sleep(1)
     print("You wake up and you are trapped in the shelter. You can not remember how you got there.")
     sleep(1)
