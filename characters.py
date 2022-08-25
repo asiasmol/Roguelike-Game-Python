@@ -26,6 +26,8 @@ def choose_mob(mob):
         return{"name":"Shelter_worker","icon":"S","health": 4, "stamina": 4, "items":['random_item']} 
     if mob == 'security_guard'or mob =="G":
         return{"name":"Security_guard","icon":"G","health": 5, "stamina": 5, "items":['random_item']}       
+    if mob == 'security_guard'or mob =="B":
+        return{"name":"BOSS","icon":"G","health": 5, "stamina": 5, "items":['random_item']}
 
 def fight_with_mob(mob, player):
     kill_mob = mob['health']
@@ -80,18 +82,27 @@ def put_mob_to_map(board,fox = 2,shelter_worker = 2,security_guard = 2):
             create_mob(board,choose_mob(mob))
     
 
-def fight_with_boss(player,position_player,board):
+def fight_with_boss(player, mob, board, position_player):
     if player["sweetness"] == 20:
-        print(f""" Your journey is slowly coming to an end.\n{time.sleep(1)}
-            The time has come to move your last important decision:\n{time.sleep(1)}
-            1. You can be adopted!\n{time.sleep(1)}
-            2.if you don't want to be adopted you can fight with the boss and escape from the shelter.\n{time.sleep(1)}
-            The choice is up to you!!""")
+        print("Your journey is slowly coming to an end.\n")
+        time.sleep(2)
+        print("The time has come to move your last important decision:\n")
+        time.sleep(2)
+        print("1. You can be adopted!\n")
+        time.sleep(2)
+        print("2.if you don't want to be adopted you can fight with the boss and escape from the shelter.\n")
+        time.sleep(2)
+        print("The choice is up to you!!")
         decision = input("What you choose 1 or 2 ?")
         if decision == "1":
-            board[position_player['y']] [position_player['x']] = "♥"
-            print("""The Boss thinks that you are sweet enough \n
-                and he fell in love with you.\n 
-                You are adopted!!""")
+            print("""\nThe Boss thinks that you are sweet enough and he fell in love with you.\n 
+            You are adopted!!""")
+            time.sleep(7)
         else: 
+            print("You chose to fight! Good luck!")
+            time.sleep(5)
             fight_with_mob(choose_mob(board[position_player['y']] [position_player['x']]),player)
+    else: 
+        print("You don't have enought sweetness! You have to fight with boss!!")
+        time.sleep(5)
+        fight_with_mob(choose_mob(board[position_player['y']] [position_player['x']]),player)
