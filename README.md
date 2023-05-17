@@ -12,7 +12,9 @@ immediately set yourself free.\nChoose your character and direct your animal
 with commands of 'w', 'a', 's', 'd' to find your happy ending.Your adventure begins now !
 Good luck !
 
-![game](https://github.com/asiasmol/Monster-Adventures/assets/102509876/e76fc2c8-08ee-468f-90e4-4f8b94e14459)
+
+![game](https://github.com/asiasmol/Roguelike-Game-Python/assets/102509876/df5ae6ce-2551-4634-bfd9-26138c51485e)
+
 
 ## ⭐ Technology stack
 <div>
