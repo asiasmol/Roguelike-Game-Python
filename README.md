@@ -13,7 +13,7 @@ with commands of 'w', 'a', 's', 'd' to find your happy ending.Your adventure beg
 Good luck !
 
 
-![game](https://github.com/asiasmol/Roguelike-Game-Python/assets/102509876/df5ae6ce-2551-4634-bfd9-26138c51485e)
+![Roguelike_Game](https://github.com/asiasmol/Roguelike-Game-Python/assets/102509876/ba8e5763-42cc-4203-a436-125e670ea85d)
 
 
 ## ⭐ Technology stack
